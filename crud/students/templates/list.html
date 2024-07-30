@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Mobile</th>
+        <th>Update/Delete</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.dept }}</td>
+        <td>{{ student.mobile }}</td>
+        <td><a href="{% url 'update' student.id %}">Update</a>/<a href="{% url 'delete' student.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+
+
+
+{% endblock content %}
